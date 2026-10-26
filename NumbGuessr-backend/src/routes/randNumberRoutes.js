@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 import * as randNumberController from "../controllers/randNumberController.js";
 const router = express.Router();
 

@@ -1,5 +1,5 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
 // Importando las rutas
 import randNumberRoutes from "./routes/randNumberRoutes.js";
