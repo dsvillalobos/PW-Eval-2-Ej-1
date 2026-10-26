@@ -6,19 +6,22 @@ function verifyGuess(req, res) {
 
   if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
     return res.status(400).json({
-      mensaje: "Ingresa un número entero entre 1 y 100"
+      mensaje: "Ingresa un número entero entre 1 y 100",
     });
   }
 
   if (guess < randNumber) {
-    return res.json({ resultado: "mayor" });
+    return res.json({ resultado: "El numero oculto es Mayor" });
   }
 
   if (guess > randNumber) {
-    return res.json({ resultado: "menor" });
+    return res.json({ resultado: "El numero oculto es Menor" });
   }
 
-  return res.json({ resultado: "correcto" });
+  return res.json({
+    status: "Ganaste",
+    resultado: "Felicidades, has adivinado el número!",
+  });
 }
 
 // metodo para resetear el numero (generar un nuevo numero aleatorio)
@@ -26,12 +29,9 @@ function resetNumber(req, res) {
   randNumber = Math.floor(Math.random() * 100) + 1;
 
   return res.json({
-    mensaje: "El juego se reinició"
+    mensaje: "El juego se reinició",
+    nuevoNumero: randNumber,
   });
 }
 
-module.exports = {
-  verifyGuess,
-  resetNumber
-};
-
+export { verifyGuess, resetNumber };
