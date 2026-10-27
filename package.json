@@ -1,0 +1,24 @@
+{
+  "name": "numbguessr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NumbGuessr",
+  "workspaces": [
+    "NumbGuessr-backend",
+    "NumbGuessr-frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c cyan,magenta \"npm run dev --workspace=numbguessr-backend\" \"npm run dev --workspace=numbguessr-frontend\"",
+    "dev:backend": "npm run dev --workspace=numbguessr-backend",
+    "dev:frontend": "npm run dev --workspace=numbguessr-frontend",
+    "build": "npm run build --workspace=numbguessr-frontend",
+    "start": "npm run start --workspace=numbguessr-backend"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
