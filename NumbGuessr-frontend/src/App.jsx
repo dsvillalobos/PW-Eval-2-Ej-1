@@ -61,7 +61,7 @@ function App() {
     <Container className="py-5">
       <Row className="justify-content-center">
         <Col xs="12" md="10" lg="8">
-          <h1 className="text-center mb-3">MindGuess</h1>
+          <h1 className="text-center mb-3">Numb Guessr</h1>
 
           <p className="text-center text-muted">
             Adivina el número secreto entre 1 y 100.
