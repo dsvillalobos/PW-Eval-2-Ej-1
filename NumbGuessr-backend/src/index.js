@@ -11,12 +11,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Rutas
+app.use("/api/", randNumberRoutes);
+
 // Ruta Inicial
 app.get("/", function (req, res) {
   res.send("RESTful Web Service de NumbGuessr");
 });
 
 // Inicializar el RESTful Web Service
-app.listen(6000, function () {
-  console.log("Servidor inicializado en el puerto 6000");
+app.listen(3000, function () {
+  console.log("Servidor inicializado en el puerto 3000");
 });
